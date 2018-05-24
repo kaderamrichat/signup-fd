@@ -1,0 +1,28 @@
+page-home {
+.img-home{
+    display: block;
+    margin: 0 auto;
+    width: 12em;
+    height: auto;
+    margin-top: 6.4em;
+}
+.title{
+    font-size: 2.8em;
+    color: #484848;
+    text-align: center;
+    font-family: 'NeutraText-LightAlt';
+    letter-spacing: .2em;
+}
+form{
+    margin-top: 2em;
+    ion-input{
+        margin: 15px 0;
+        border: .5px solid rgba(72,72,72,.4);
+
+        height: 33px;
+        font-size: 12px;
+        padding-left: 7px;
+        border-radius: 4px;
+    }
+}
+}

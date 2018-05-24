@@ -1,0 +1,19 @@
+
+
+<ion-content padding>
+  <img src="../../assets/imgs/flitdesk-logo.svg" alt="" class="img-home">
+  <h1 class="title">flitdesk</h1>
+
+  <form [formGroup]="formRegistration" (ngSubmit)="validateForm()">
+
+
+      <ion-input type="text" placeholder="Create your email" name="email" formControlName="email"></ion-input>
+      <ion-input type="password" placeholder="Create a password"></ion-input>
+      <ion-input type="password" placeholder="Verify your password"></ion-input>
+
+     <button ion-button block type="submit">register</button>
+  </form>
+
+  
+
+</ion-content>
