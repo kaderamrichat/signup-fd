@@ -8,10 +8,10 @@
 
 
       <ion-input type="text" placeholder="Create your email" name="email" formControlName="email"></ion-input>
-      <ion-input type="password" placeholder="Create a password"></ion-input>
-      <ion-input type="password" placeholder="Verify your password"></ion-input>
+      <ion-input type="password" placeholder="Create a password" name="password" formControlName="password"></ion-input>
+      <ion-input type="password" placeholder="Verify your password" name="passwordConfirm" formControlName="passwordConfirm"></ion-input>
 
-     <button ion-button block type="submit">register</button>
+     <button ion-button block type="submit" [disabled]="!formRegistration.controls.email.valid">register</button>
   </form>
 
   

@@ -8,18 +8,23 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class HomePage {
  
-  public formRegistration:any;
-  formGroup: FormGroup;
+  formRegistration:FormGroup;
+
 
   constructor(public navCtrl: NavController,public fb: FormBuilder,public alertCtrl: AlertController) {
     this.formRegistration = fb.group({
-      "email" : ["", Validators.required],
-      "password" : ["", Validators.required]
+      "email" : ["", Validators.minLength(5)],
+      "password" : ["", Validators.required],
+      "passwordConfirm" : ["", Validators.required]
     })
   }
 
-  
+
   validateForm(){
+    console.log("message envoyé")
+  }
+  
+  ErrorMessage(){
     let alert = this.alertCtrl.create({
       title: 'Error',
       subTitle: "Vous n'avez pas entré les même mots de passe",
