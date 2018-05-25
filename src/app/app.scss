@@ -19,3 +19,18 @@ body{
     font-size: 62.5%;
     box-sizing: border-box;
 }
+
+@font-face{
+    font-family: 'Poppins-Medium';
+    src: url(../../assets/fonts/Poppins-Medium.ttf);
+  }
+
+@font-face{
+    font-family: 'Poppins-Light';
+    src: url(../../assets/fonts/Poppins-Light.ttf);
+  }
+  
+  @font-face{
+    font-family: 'NeutraText-Light';
+    src: url(../assets/fonts/NeutraText-LightAlt.otf);
+  }

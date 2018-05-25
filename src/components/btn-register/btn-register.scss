@@ -1,0 +1,14 @@
+btn-register {
+    .btn-register{
+       width: 100%;
+       height: $heightInput;
+       border-radius: 4px;
+       font-family: 'Poppins-Medium', sans-serif;
+       background-color: #FF5A5F; 
+       color:white;
+       font-size: 16px;
+       text-transform: uppercase;
+       box-shadow: 0 2px 2px rgba(0,0,0,0.24);
+       transition: .5s ease;
+    }
+}

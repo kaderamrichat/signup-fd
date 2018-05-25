@@ -4,16 +4,30 @@
   <img src="../../assets/imgs/flitdesk-logo.svg" alt="" class="img-home">
   <h1 class="title">flitdesk</h1>
 
-  <form [formGroup]="formRegistration" (ngSubmit)="validateForm()">
+  <form [formGroup]="formRegistration" (ngSubmit)="validateForm(formRegistration.value)">
 
+    <ion-input type="text" placeholder="Create yout email" name="email" formControlName="email"></ion-input>
+      <div class="alert" *ngIf="!formRegistration.controls['email'].valid && formRegistration.controls['email'].touched">
+        Email is required
+        </div>
 
-      <ion-input type="text" placeholder="Create your email" name="email" formControlName="email"></ion-input>
-      <ion-input type="password" placeholder="Create a password" name="password" formControlName="password"></ion-input>
+      <ion-input type="password" placeholder="Create a password (min 6 char.)" name="password" formControlName="password"></ion-input>
+        <div class="alert" *ngIf="!formRegistration.controls['password'] && formRegistration.controls['password'].touched">
+            Password is required
+        </div>
+
       <ion-input type="password" placeholder="Verify your password" name="passwordConfirm" formControlName="passwordConfirm"></ion-input>
 
-     <button ion-button block type="submit" [disabled]="!formRegistration.controls.email.valid">register</button>
-  </form>
+     <btn-register [disabled]="!formRegistration.valid" titleBtn="{{'register' | uppercase}}"></btn-register>
 
-  
+    </form>
+    <p>{{ formRegistration.get('password').status}} </p>
+  </ion-content>
 
-</ion-content>
+
+<!-- <div class="alert" *ngIf="!formRegistration.controls['email'].valid && formRegistration.controls['email'].touched">
+    {{ ErrorTitle }}
+  </div> -->
+
+
+    <!-- <button ion-button block type="submit" [disabled]="!formRegistration.valid">{{'register' | uppercase}}</button> -->
