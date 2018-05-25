@@ -1,3 +1,18 @@
 page-landing {
-
+    font-family: 'Poppins-Light';
+    .info{
+        display: block;
+        font-family: serif;
+        font-weight: bold;
+    }
+    .card-subtitle,.card-title{
+        padding: 10px;
+    }
+    .title{
+        font-size: 1.7em;
+        color: #484848;
+        font-family: 'NeutraText-Light';
+        letter-spacing: .2em;
+        text-align: center;
+    }
 }

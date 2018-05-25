@@ -21,13 +21,16 @@
      <btn-register [disabled]="!formRegistration.valid" titleBtn="{{'register' | uppercase}}"></btn-register>
 
     </form>
-    <p>{{ formRegistration.get('password').status}} </p>
   </ion-content>
+  
+  
+<!-- ######## Notes pour plus tard ############### -->
 
-
-<!-- <div class="alert" *ngIf="!formRegistration.controls['email'].valid && formRegistration.controls['email'].touched">
+  <!-- <div class="alert" *ngIf="!formRegistration.controls['email'].valid && formRegistration.controls['email'].touched">
     {{ ErrorTitle }}
   </div> -->
-
-
-    <!-- <button ion-button block type="submit" [disabled]="!formRegistration.valid">{{'register' | uppercase}}</button> -->
+  
+  <!-- <ion-item no-lines>
+  <p>{{ formRegistration.get('password').status}} </p>
+  </ion-item> -->
+  

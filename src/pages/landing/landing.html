@@ -6,12 +6,30 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>landing</ion-title>
+    <ion-title>Flitdesk</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-<p>Hello</p>
+<ion-list>
+  <h1 class="title">Bienvenue sur votre espace : </h1> 
+
+</ion-list>
+
+<ion-card>
+    <img src="https://picsum.photos/200/100/?random"/>
+    <div class="card-title">Vos infos </div>
+    <div class="card-subtitle">
+      <ion-list> 
+        <ion-item no-lines>
+        votre mail est <span class="info">{{ email }}</span>
+        </ion-item>
+        <ion-item no-lines>
+        votre mot de passe est <span class="info">{{ password }}</span>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-card>
+
+
 </ion-content>

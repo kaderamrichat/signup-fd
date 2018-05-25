@@ -14,8 +14,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'landing.html',
 })
 export class LandingPage {
+  email: string;
+  password: string;
+
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.email    = navParams.get("email");
+    this.password = navParams.get("password");
   }
 
   ionViewDidLoad() {
