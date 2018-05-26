@@ -16,26 +16,27 @@ export class HomePage {
   textEmail = "Create your email";
   ErrorTitle:string = "The field email is required";
   formRegistration:FormGroup;
-  email:any = "";
+  email:string = "";
   password:string = "";
   passwordConfirm:string = "";
-  emailRegex:string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/igm";
+  //emailRegex:string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/$";
+
 
   constructor(public navCtrl: NavController,public fb: FormBuilder,public alertCtrl: AlertController, public navParams:NavParams) {
     this.formRegistration = fb.group({
-      "email" : ["", Validators.required],
-      "password" : ["",  Validators.compose([Validators.required,Validators.minLength(6)])],
-      "passwordConfirm" : ["", Validators.compose([Validators.required,Validators.minLength(6)])]
+      "email" : ["", [Validators.required,Validators.email]],
+      // "email" : ["", Validators.compose([Validators.required,Validators.pattern('this.emailRegex')])],
+      "password" : ["123456",  Validators.compose([Validators.required,Validators.minLength(6)])],
+      "passwordConfirm" : ["123456", Validators.compose([Validators.required,Validators.minLength(6)])]
     })
   }
 
   validateForm(post){
-    //Todo Mettre le custom pipe ici & faire un check si ok sinon alert
     // this.email    = post.email;
     this.password = post.password;
     this.passwordConfirm = post.passwordConfirm;
-
      if(this.passwordConfirm === this.password){
+      //console.log(this.formRegistration)
       this.navCtrl.push(LandingPage, {
         email    : post.email,
         password : post.password
@@ -47,18 +48,13 @@ export class HomePage {
   
   ErrorMessage(msg){
     let alert = this.alertCtrl.create({
-      title: 'Flitdesk',
+      title: "Flitdesk",
       subTitle: msg,
-      buttons: ['OK']
+      buttons: ["OK"]
     });
     alert.present();
   }
 
  ngOnInit(){
  }
-
- 
- //Patterns for checkking mail
- //pattern="[A-Za-z0-9._%+-]{2,}@[a-zA-Z-_.]{2,}[.]{1}[a-zA-Z]{2,}"
- //emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 }
